@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Practica3 5 - My Docs</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../css/brands.min.css" rel="stylesheet">
+        <link href="../css/solid.min.css" rel="stylesheet">
+        <link href="../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">My Docs</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href=".." class="nav-link">Welcome to MkDocs</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="./" class="nav-link active" aria-current="page">Practica3 5</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href=".." class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" class="nav-link disabled">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#practica-35-despliegue-de-una-aplicacion-flask-python" class="nav-link">Práctica 3.5: Despliegue de una aplicación Flask (Python)</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#prerrequisitos" class="nav-link">Prerrequisitos</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#introduccion" class="nav-link">Introducción</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#procedimiento-completo-para-el-despliegue" class="nav-link">Procedimiento completo para el despliegue</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#crear-los-archivos-necesarios" class="nav-link">Crear los archivos necesarios</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#comprobacion-de-gunicorn" class="nav-link">Comprobación de gunicorn</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#compronar-gunicorn-como-servicio" class="nav-link">Compronar gunicorn como servicio</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#configurar-nginx" class="nav-link">Configurar nginx</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#probar-la-aplicacion-y-su-ejecucion" class="nav-link">Probar la aplicación y su ejecución</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#repetir-el-proceso-con-un-repositorio-de-github" class="nav-link">Repetir el proceso con un repositorio de github</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<p>Natividad Márquez Baena</p>
+<h1 id="practica-35-despliegue-de-una-aplicacion-flask-python">Práctica 3.5: Despliegue de una aplicación Flask (Python)</h1>
+<p>1.<a href="#1">Prerrequisitos</a>
+2.<a href="#2">Introducción</a>
+3.<a href="#3">Procedimiento completo para el despliegue</a>
+4.<a href="#4">Crear los archivos necesarios</a>
+5.<a href="#5">Comprobación de gunicorn</a>
+6.<a href="#6">Compronar gunicorn como servicio</a>
+7.<a href="#7">Configurar nginx</a>
+8.<a href="#8">Probar la aplicación y su ejecución</a>
+9.<a href="#9">Repetir el proceso con un repositorio de github</a></p>
+<div id="1"></div>
+
+<h2 id="prerrequisitos">Prerrequisitos</h2>
+<p>Para la práctica se deben partir de ciertos elementos previos, en un servidor Debian para realizar el despliegue:</p>
+<p>Nginx: Servidor web para manejar las solicitudes y respuestas.
+Gunicorn: Servidor WSGI que conecta el servidor web con la aplicación Flask.
+Pipenv: Herramienta para gestionar entornos virtuales y dependencias en Python.</p>
+<div id="2"></div>
+
+<h2 id="introduccion">Introducción</h2>
+<p>El objetivo de esta práctica es aprender a desplegar una aplicación web desarrollada con Flask (Python) en un entorno de producción, utilizando herramientas como gunicorn, nginx y pipenv. Gunicorn se usa como servidor WSGI para manejar solicitudes y respuestas entre la aplicación y el servidor web. Nginx servirá como servidor web para gestionar el tráfico y servir la aplicación.</p>
+<p>Por último con Pipenv se creará un entorno virtual. Se persigue garantizar un despliegue seguro, funcional y accesible en un entorno de producción.</p>
+<div id="3"></div>
+
+<h2 id="procedimiento-completo-para-el-despliegue">Procedimiento completo para el despliegue</h2>
+<p>Primeramente se instala el gestor de paquetes de Python pip y tambien el servidor de aplicaciones gunicorn:</p>
+<p><img alt="alt text" src="../image.png" />
+<img alt="alt text" src="../image-1.png" />
+<img alt="alt text" src="../image-2.png" />
+<img alt="alt text" src="../image-3.png" /></p>
+<p>Comprobamos que se ha instalado correctamente la versión con:</p>
+<p><img alt="alt text" src="../image-4.png" /></p>
+<p>Creamos el directorio en el que almacenaremos nuestro proyecto. Además, es importante otorgarle permisos a nuestro usuario y que pertenezca al grupo www-data. Con esto se permite que el servidor web y tu usuario puedan acceder y modificar los archivos del proyecto.Para ello se usa <code>chown</code>:</p>
+<p><img alt="alt text" src="../image-5.png" />
+<img alt="alt text" src="../image-6.png" /></p>
+<p>Ahora se va a crear la estructura del proyecto:</p>
+<p>En el directorio creado, se creará un archivo oculto que contendrá las variables de entorno necesarias. En el archivo se añaden las variables de manera que una será el archivo <code>py</code>y otra el entorno <code>production</code>.</p>
+<p><img alt="alt text" src="../image-7.png" /></p>
+<p>Se crea un entorno virtual con <code>pipenv shell</code> para asegurar que las dependencias del proyecto no afecten al sistema actual.</p>
+<p><img alt="alt text" src="../image-8.png" /></p>
+<p>A continuación se instalará Flask para desarrollar la aplicación, y Gunicorn para ejecutar la aplicación en un entorno de producción.</p>
+<p><img alt="alt text" src="../image-9.png" /></p>
+<div id="4"></div>
+
+<h2 id="crear-los-archivos-necesarios">Crear los archivos necesarios</h2>
+<p>Ahora se crea la aplicación de ejemplo. Para ello se crea un archivo <code>application.py</code> con la lógica del proyecto y <code>wsgi.py</code>, que configura cómo se ejecutará Flask a través de Gunicorn.</p>
+<p><img alt="alt text" src="../image-10.png" />
+<img alt="alt text" src="../image-11.png" /></p>
+<p>Ahora se prueba el funcionamiento de la aplicación en el servidor web integrado de Flask y accedemos a la dirección que obtenemos:</p>
+<p><img alt="alt text" src="../image-12.png" />
+Como podemos comprobar, se puede acceder correctamente cpn <code>http://IP-maq-virtual:5000:</code>
+<img alt="alt text" src="../image-13.png" /></p>
+<div id="5"></div>
+
+<h2 id="comprobacion-de-gunicorn">Comprobación de gunicorn</h2>
+<p>Se comprueba que Gunicorn funciona correctamente, ya que actúa como intermediario entre Flask y Nginx en producción:<code>gunicorn --workers 4 --bind 0.0.0.0:5000 wsgi:app</code></p>
+<p><img alt="alt text" src="../image-14.png" /></p>
+<p>Es importante que se tome nota de cual es el path o ruta desde la que se ejecuta gunicorn para poder configurar más adelante un servicio del sistema. Esto se hace mediante el uso de <code>which gunicorn</code>:</p>
+<p><img alt="alt text" src="../image-15.png" /></p>
+<div id="6"></div>
+
+<h2 id="compronar-gunicorn-como-servicio">Compronar gunicorn como servicio</h2>
+<p>Se va a hacer uso de nginx, por lo que se inicializa y se comprueba su estado.</p>
+<p><img alt="alt text" src="../image-16.png" /></p>
+<p>Ahora que se ha iniciado, se crea un archivo de servicio de systemd para que gunicorn se ejecute como servicio del sistema, con el siguiente contenido:</p>
+<p><img alt="alt text" src="../image-17.png" /></p>
+<p>Ahora se habilita e inicia el servicio creado</p>
+<p><img alt="alt text" src="../image-18.png" />
+<img alt="alt text" src="../image-19.png" /></p>
+<p>Hacemos un <code>systemctl status</code> para comprobar el estado del servicio y que funciona.</p>
+<p><img alt="alt text" src="../image-20.png" /></p>
+<div id="7"></div>
+
+<h2 id="configurar-nginx">Configurar nginx</h2>
+<p>Se creará una archivo de configuración de nginx con el nombre de nuestra aplicación y se establece la siguiente configuración:</p>
+<p><img alt="alt text" src="../image-21.png" /></p>
+<p>Se crea un link simbólico del archivo creado desde sitios webs disponibles a sitios web activos, es decir, del directorio <code>sites-available</code> a <code>sites-enabled</code>. Posteriormente lo comprobamos con un <code>ls -l</code></p>
+<p><img alt="alt text" src="../image-22.png" /></p>
+<p>Finalmente se comprueba si el archivo es correcto con <code>sudo nginx -t</code> y se reinicia nginx para posteriormente comprobar el estado de este.</p>
+<p><img alt="alt text" src="../image-23.png" /></p>
+<div id="8"></div>
+
+<h2 id="probar-la-aplicacion-y-su-ejecucion">Probar la aplicación y su ejecución</h2>
+<p>Ya no es posible acceder por IP a nuestra aplicación ya que ahora está siendo servida por Gunicorn y Nginx, necesitamos acceder por su <code>server_name</code>. Para ello se modifica el archivo <code>/etc/hosts</code> de nuestra máquina anfitriona para que asocie la IP de la máquina virtual, a nuestro <code>server_name</code>.
+La ruta absoluta del archivo es  <code>C:\Windows\System32\drivers\etc\hosts</code></p>
+<p>Y se deberán añadir la línea:</p>
+<p><code>192.168.X.X myproject www.myproject</code></p>
+<p><img alt="alt text" src="../image-24.png" /></p>
+<p>Ahora se debería de poder acceder a la aplicación desde la máquina anfitriona con <code>http://www.nombre_aplicacion</code>.</p>
+<p><img alt="alt text" src="../image-25.png" /></p>
+<div id="9"></div>
+
+<h2 id="repetir-el-proceso-con-un-repositorio-de-github">Repetir el proceso con un repositorio de github</h2>
+<p>En esta parte se repetirá el proceso con una aplicación de github. Para ello se clonará el siguiente repositorio <code>git clone https://github.com/raul-profesor/Practica-3.5</code>, del cual se obtendrán los paquetes necesarios. El repositorio se clonará en <code>/var/www</code>.</p>
+<p><img alt="alt text" src="../image-26.png" /></p>
+<p>Se otorgan los permisos de la misma manera:</p>
+<p><img alt="alt text" src="../image-27.png" /></p>
+<p>Ya en el directorio de la práctica, se arranca el entorno y se instalan las dependencias haciendo uso del archivo obtenido en el repositorio <code>pipenv install -r requirements.txt</code>.</p>
+<p><img alt="alt text" src="../image-28.png" /></p>
+<p>Se comprueba la ejecución de la aplicación:</p>
+<p><img alt="alt text" src="../image-29.png" /></p>
+<p>Y obtenemos el siguiente resultado.</p>
+<p><img alt="alt text" src="../image-30.png" /></p>
+<p>Ahora se comprobará la aplicación localmente</p>
+<p><img alt="alt text" src="../image-31.png" />
+<img alt="alt text" src="../image-32.png" /></p>
+<p>Repitiendo los pasos anteriores, se configura gunicorn como servicio</p>
+<p><img alt="alt text" src="../image-33.png" /></p>
+<p>Se comprueba el estado</p>
+<p><img alt="alt text" src="../image-34.png" /></p>
+<p>Creamos un archivo de servicio con el siguiente contenido:</p>
+<p><img alt="alt text" src="../image-35.png" /></p>
+<p>A continuación, se crea el archivo de configuración de nginx en el directorio de sitios disponibles</p>
+<p><img alt="alt text" src="../image-36.png" /></p>
+<p>Se crea su enlace simbólico, se mueve al directorio se sitios activos y se comprueba que se ha realizado correctamente el proceso</p>
+<p><img alt="alt text" src="../image-37.png" /></p>
+<p>A continuación se realiza la comprobación sobre la sintaxis de los archivos, se reinicia el servicio y se comprueba su estado</p>
+<p><img alt="alt text" src="../image-38.png" /></p>
+<p>Como en el procedimiento anterios, se modificará el archivo <code>/etc/hosts</code> de la máquina anfitriona, donde añadiremos una línea para asociar el nombre del servidor con su IP.</p>
+<p><img alt="alt text" src="../image-39.png" /></p>
+<p>Finalmente, deberíamos de poder acceder a la aplicación mediante la búsqueda con <code>http://www.nombre_aplicacion</code>.</p>
+<p><img alt="alt text" src="../image-40.png" /></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+        <script src="../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
